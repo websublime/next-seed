@@ -10,6 +10,7 @@ import { applyMiddleware, compose, createStore, Store } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import apiMiddleware from '../middleware/api';
 import reducer from '../../reducers';
+import { StateType } from '@ws/react-next/types';
 
 // eslint-disable-next-line no-underscore-dangle, no-undef
 const composeEnhancers =

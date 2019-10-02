@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import { Button } from 'antd';
+import './nav.module.less';
 
 const links = [
   { href: 'https://zeit.co/now', label: 'ZEIT', key: '' },
@@ -20,10 +22,14 @@ const Nav: React.SFC<NavInterface> = props => (
         <Link href="/">
           <a>{props.title}</a>
         </Link>
+        <Button className="btn" type="primary">
+          Button
+        </Button>
       </li>
       {links.map(({ key, href, label }) => (
         <li key={key}>
           <a href={href}>{label}</a>
+          <Button type="danger">Button</Button>
         </li>
       ))}
     </ul>

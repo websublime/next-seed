@@ -2,29 +2,34 @@ import { Col, Row } from 'antd';
 import React from 'react';
 import Head from 'next/head';
 import Nav from '@ws/react-next/view/nav/nav-component';
+import { compose } from 'recompose';
+import { withI18n, withI18nProps } from '@lingui/react';
+import withI18nLoader from '../view/locale/withI18nLoader';
+import { Button } from 'antd';
+import { DispatchProp } from 'react-redux';
 
-const Home = () => (
+type HomeProps = {} & withI18nProps & DispatchProp<any>;
+
+const Home: React.SFC<HomeProps> = props => (
   <div>
     <Head>
       <title>Homepage</title>
     </Head>
 
     <Nav title="Home" />
+    {console.dir(props)}
 
     <div className="hero">
-      <h1 className="title">Welcome to Next.js with typescript superpowers!</h1>
+      <h1 className="title">
+        {props.i18n._('home.title')} to Next.js with typescript superpowers!
+      </h1>
       <p className="description">
         To get started, edit <code>pages/index.js</code> and save to reload.
       </p>
 
       <Row>
         <Col lg={9} md={9} sm={4} xs={4}>
-          <div className="preview">
-            <img
-              src="https://asleepysamurai.com/articles/organizing-your-react-redux-codebase/img/state-view-grouping.png"
-              alt="Structure"
-            />
-          </div>
+          <Button type="primary">Button</Button>
         </Col>
       </Row>
 
@@ -100,4 +105,7 @@ const Home = () => (
   </div>
 );
 
-export default Home;
+export default compose<HomeProps, {}>(
+  withI18nLoader('home'),
+  withI18n(),
+)(Home);

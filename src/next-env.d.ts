@@ -27,12 +27,6 @@ interface ActionType<PAYLOAD, TYPE> {
   type: TYPE;
 }
 
-interface StateType {
-  locale: {
-    code: string;
-  };
-}
-
 interface Window {
   _config: any;
   __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any;

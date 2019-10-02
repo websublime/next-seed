@@ -10,11 +10,11 @@ import get from 'lodash/fp/get';
 import Document, { Head, Main, NextScript, DocumentContext } from 'next/document';
 import React from 'react';
 
-export default class AdminDocument extends Document<{ config: any }> {
+export default class WindowDocument extends Document<{ config: any }> {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
     const { chunks, errorHtml, head, html } = ctx.renderPage() as any;
-    console.log(get('locals.config', ctx.req));
+
     return {
       ...initialProps,
       chunks,

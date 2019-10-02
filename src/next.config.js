@@ -49,7 +49,7 @@ module.exports = withLess({
       ...sentry,
       '@ws/react-next': path.resolve(__dirname, '../src'),
       '@ws/react-server': path.resolve(__dirname, '../server'),
-      locales: path.resolve('locales'),
+      locales: path.resolve(__dirname, '../locales'),
     };
 
     config.resolve.plugins.push(
