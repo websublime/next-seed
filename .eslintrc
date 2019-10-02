@@ -6,36 +6,28 @@
     "prettier/@typescript-eslint", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
     "plugin:prettier/recommended" // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
-  "parserOptions": {
-    "ecmaVersion": 2018, // Allows for the parsing of modern ECMAScript features
-    "sourceType": "module" // Allows for the use of imports
-  },
   "rules": {
-    "id-length": ["error", "exceptions"],
-    "lines-around-comment": ["error", { "afterBlockComment": false, "beforeBlockComment": true }],
-    "react/jsx-first-prop-new-line": ["error", "multiline-multiprop"],
-    "react/jsx-tag-spacing": ["error", { "beforeSelfClosing": "never" }],
-    "react/prop-types": ["error", { "ignore": ["form", "i18n", "onSubmit"] }],
-    "switch-case/newline-between-switch-case": ["error", "always", { "fallthrough": "never" }],
-    "import/order": [
-      "error",
-      { "groups": ["index", "sibling", "parent", "internal", "external", "builtin"] }
-    ],
-    "sort-imports-es6/sort-imports-es6": [
-      "error",
-      {
-        "ignoreCase": false,
-        "ignoreMemberSort": false,
-        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
-      }
-    ],
-    "sort-keys": [
-      "error",
-      "asc",
-      {
-        "natural": true
-      }
-    ],
-    "prettier/prettier": ["error"]
+    "import/no-default-export": "off",
+    "import/no-unresolved": "off", // to capture direct deps in TS
+    "jsx-a11y/anchor-is-valid": "off", // Next.js use <a>
+    "no-console": "off",
+    "no-undef": "off", //FIXME @see https://github.com/eslint/typescript-eslint-parser/issues/75
+    "no-unused-expressions": "off", // tests
+    "react/sort-comp": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-var-requires": "off"
+  },
+  "env": {
+    "browser": true,
+    "mocha": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "16.6.0"
+    }
   }
 }
