@@ -1,12 +1,11 @@
-import { Col, Row } from 'antd';
-import React from 'react';
+import { Col, Row, Button } from 'antd';
+import * as React from 'react';
 import Head from 'next/head';
 import Nav from '@ws/react-next/view/nav/nav-component';
 import { compose } from 'recompose';
 import { withI18n, withI18nProps } from '@lingui/react';
-import withI18nLoader from '../view/locale/withI18nLoader';
-import { Button } from 'antd';
 import { DispatchProp } from 'react-redux';
+import withI18nLoader from '../view/locale/withI18nLoader';
 
 type HomeProps = {} & withI18nProps & DispatchProp<any>;
 
@@ -49,59 +48,61 @@ const Home: React.SFC<HomeProps> = props => (
       </div>
     </div>
 
-    <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-      .preview {
-        display: flex;
-        justify-content: center;
-      }
-      .preview img {
-        max-width: 900px;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title,
-      .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
-      }
-    `}</style>
+    <style jsx>
+      {`
+        .hero {
+          width: 100%;
+          color: #333;
+        }
+        .preview {
+          display: flex;
+          justify-content: center;
+        }
+        .preview img {
+          max-width: 900px;
+        }
+        .title {
+          margin: 0;
+          width: 100%;
+          padding-top: 80px;
+          line-height: 1.15;
+          font-size: 48px;
+        }
+        .title,
+        .description {
+          text-align: center;
+        }
+        .row {
+          max-width: 880px;
+          margin: 80px auto 40px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+        }
+        .card {
+          padding: 18px 18px 24px;
+          width: 220px;
+          text-align: left;
+          text-decoration: none;
+          color: #434343;
+          border: 1px solid #9b9b9b;
+        }
+        .card:hover {
+          border-color: #067df7;
+        }
+        .card h3 {
+          margin: 0;
+          color: #067df7;
+          font-size: 18px;
+        }
+        .card p {
+          margin: 0;
+          padding: 12px 0 0;
+          font-size: 13px;
+          color: #333;
+        }
+      `}
+    </style>
   </div>
 );
 

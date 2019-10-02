@@ -3,14 +3,6 @@ import Link from 'next/link';
 import { Button } from 'antd';
 import './nav.module.less';
 
-const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT', key: '' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub', key: '' },
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`;
-  return link;
-});
-
 interface NavInterface {
   title: string;
 }
@@ -26,12 +18,6 @@ const Nav: React.SFC<NavInterface> = props => (
           Button
         </Button>
       </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-          <Button type="danger">Button</Button>
-        </li>
-      ))}
     </ul>
 
     <style jsx>{`

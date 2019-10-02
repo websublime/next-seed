@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon --inspect",
     "build": "next build src && ttsc --project tsconfig.server.json",
-    "start": "cross-env NODE_ENV=production node dist/server/index.js",
+    "dev": "nodemon --inspect",
+    "format": "prettier-eslint --write \"src/**/*.{ts,tsx}\"",
     "lint": "eslint --ext ts,tsx src",
     "lint:fix": "eslint --ext ts,tsx src --fix",
-    "format": "prettier-eslint --write \"src/**/*.{ts,tsx}\""
+    "start": "cross-env NODE_ENV=production node dist/server/index.js",
+    "test": "jest"
   },
   "eslintIgnore": [
     "node_modules"
@@ -59,6 +60,7 @@
     "@lingui/cli": "^2.8.3",
     "@lingui/loader": "^2.8.3",
     "@lingui/macro": "^2.8.3",
+    "@types/enzyme": "^3.10.3",
     "@types/jest": "^24.0.18",
     "@types/lingui__core": "^2.7.0",
     "@types/lingui__macro": "^2.7.3",
@@ -72,6 +74,8 @@
     "@typescript-eslint/eslint-plugin": "^2.3.1",
     "@typescript-eslint/parser": "^2.3.1",
     "cross-env": "^6.0.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^6.3.0",

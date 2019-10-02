@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "paths": {
+      "@ws/react-server/*": [
+        "server/*"
+      ],
+      "@ws/react-next/*": [
+        "src/*"
+      ]
+    },
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "baseUrl": ".",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "target": "es5",
+    "downlevelIteration": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".next",
+    "out"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ]
+}
