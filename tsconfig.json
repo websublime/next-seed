@@ -40,7 +40,11 @@
     "node_modules",
     "dist",
     ".next",
-    "out"
+    "out",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/*.test.ts",
+    "**/*.test.tsx"
   ],
   "include": [
     "**/*.ts",
